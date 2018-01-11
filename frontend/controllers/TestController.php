@@ -35,10 +35,8 @@ class TestController extends Controller {
 
 	}
 
-    public function actionFind()
+    public function actionFind($id = 1)
     {
-		$id = 1;
-		var_dump($id);
         $model = Blog::findOne($id);
 
 //        if ($model === null) {
