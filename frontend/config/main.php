@@ -36,6 +36,19 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+
+		'urlManager' => [
+			'enablePrettyUrl' => true,
+			'showScriptName' => true,
+			'enableStrictParsing' => false,
+			'suffix' => '',
+			'rules' => [
+				'/blogs' => '/blog/index',
+				// '/blogs/<id:\d+>' => '/blog/view',
+				'<controller:\w+>/<id:\d+>' => '<controller>/view',
+			//	"<controller:\w+>/<action:\w+>" => "<controller>/<action>",
+			],
+		],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
