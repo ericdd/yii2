@@ -104,7 +104,7 @@ class TestController extends Controller
 
         $condition = ["id"=>1];
         $ret = Buser::find()->where($condition)->asArray()->one();   // 根据条件以数组形式返回一条数据；
-        $ret2 = Buser::find()->where($condition)->asArray()->all();   
+        $ret2 = Buser::find()->where($condition)->asArray()->all();
 
         printr($ret);
         printr($ret2);
