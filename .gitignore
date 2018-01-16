@@ -3,6 +3,11 @@
 /yii_test
 /yii_test.bat
 
+runtime/
+debug/*.data
+
+*.log
+
 # phpstorm project files
 .idea
 

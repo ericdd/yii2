@@ -42,7 +42,7 @@ function bsize($str)
 		$str /= 1024;
 	}
 	return sprintf("%5.2f %sB", $str, $k);
-}
+ }
 
 function getOs()
 {
