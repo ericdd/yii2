@@ -34,6 +34,7 @@ class Blog extends \yii\db\ActiveRecord
             [['create_time'], 'safe'],
 			['create_time', 'default', 'value' => date('Y-m-d H:i:s',time())],		// 设置默认值
         ];
+
     }
 
     /**
@@ -42,10 +43,11 @@ class Blog extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'title' => 'Title',
-            'content' => 'Content',
-            'create_time' => 'Create Time',
+            'id' => 'ID',           //id为数据表中的字段名，ID 为表单显示的描述
+            'title' => '标题',
+            'content' => '内容',
+            'create_time' => '创建时间',
+            'aa' => '不存在的字段',
         ];
     }
 }

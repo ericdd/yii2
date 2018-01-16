@@ -1,3 +1,9 @@
+<?php
+use yii\helpers\Html;
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +18,10 @@
 <body>
 
 <pre>
-render渲染、renderPartial渲染部分、renderContent、renderAjax、renderFile
 
 ①　render显示view和layout
 ②　renderPartial只显示view
-③　renderContent只渲染layout
-④　renderFile显示指定的文件，是最基础的方法，
-renderAjax,renderPartial最终都是调用renderFile.
-⑤　renderAjax只显示view，以ajax方式渲染页面，可以配合js/css实现各种特效
+
 </pre>
 <hr />
 
@@ -31,6 +33,7 @@ echo $msg,'<br />';
 
 ?>
 
+<h2><?= Html::encode($msg) ?></h2>
 
 
 <script type="text/javascript">
