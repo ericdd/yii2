@@ -1,18 +1,11 @@
 <?php
-$params = array_merge(
-    require __DIR__ . '/../../common/config/params.php',
-    require __DIR__ . '/../../common/config/params-local.php',
-    require __DIR__ . '/params.php',
-    require __DIR__ . '/admin.php',
-    require __DIR__ . '/params-local.php'
-);
 
 return [
-    'id' => 'app-frontend',
+    'id' => 'app-admin',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'defaultRoute' => 'site',          // 设置默认控制器
-    'controllerNamespace' => 'frontend\controllers',
+    'defaultRoute' => 'test',          // 设置默认控制器
+    'controllerNamespace' => 'frontend\controllers\admin',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -46,9 +39,9 @@ return [
             'suffix' => '',
             'rules' => [
                 'admin/<controller:\w+>/<action:\w+>' => 'Admin/<controller>/<action>',
-                '/blogs' => '/blog/index',
+//                '/blogs' => '/blog/index',
                 // '/blogs/<id:\d+>' => '/blog/view',
-                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+//                '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 //	"<controller:\w+>/<action:\w+>" => "<controller>/<action>",
             ],
         ],
@@ -61,5 +54,4 @@ return [
         ],
         */
     ],
-    'params' => $params,
 ];

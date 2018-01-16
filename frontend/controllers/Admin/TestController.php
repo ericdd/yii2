@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\controllers;
+namespace frontend\controllers\Admin;
 
 use Yii;
 use app\models\Blog;
@@ -12,20 +12,6 @@ use yii\web\Controller;
 
 class TestController extends Controller
 {
-
-    public $layout = '';
-   // public $defaultAction = 'admin';        //设置admin是默认的方法名
-
-    public function actions()
-    {
-        //	echo rand();
-    }
-
-    public function actionAdmin()
-    {
-        	echo rand();
-    }
-
 
     public function actionIndex()
     {
