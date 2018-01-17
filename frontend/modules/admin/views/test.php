@@ -8,7 +8,7 @@ use yii\helpers\Html;
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>test</title>
+<title>admin - test</title>
 <meta name="Keywords" content="" />
 <meta name="Description" content="" />
 <style type="text/css">
@@ -19,10 +19,11 @@ use yii\helpers\Html;
 
 <pre>
 
-①　render显示view和layoutS
+①　render显示view和layout
 ②　renderPartial只显示view
 
 </pre>
+
 
 
 <hr />
@@ -36,6 +37,7 @@ echo '<br />';
 
 echo $name, '<br />';
 echo $msg,'<br />';
+
 
 
 ?>

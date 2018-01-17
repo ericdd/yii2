@@ -3,7 +3,6 @@ $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
     require __DIR__ . '/params.php',
-    require __DIR__ . '/admin.php',
     require __DIR__ . '/params-local.php'
 );
 
@@ -45,7 +44,6 @@ return [
             'enableStrictParsing' => false,
             'suffix' => '',
             'rules' => [
-                'admin/<controller:\w+>/<action:\w+>' => 'Admin/<controller>/<action>',
                 '/blogs' => '/blog/index',
                 // '/blogs/<id:\d+>' => '/blog/view',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
@@ -61,5 +59,17 @@ return [
         ],
         */
     ],
+
+    'modules' => [
+        'admin' => [
+            'defaultRoute' => 'default',          // 设置module的默认控制器
+            'class' => 'app\modules\admin\Module',
+        ],
+        'demo' => [
+            'defaultRoute' => 'default',
+            'class' => 'app\modules\demo\Module',
+        ],
+    ],
+
     'params' => $params,
 ];

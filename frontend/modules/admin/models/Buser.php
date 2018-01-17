@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\modules\admin\models;
 
 use Yii;
 
@@ -59,7 +59,4 @@ class Buser extends \yii\db\ActiveRecord
             'last_login_ip' => 'Last Login Ip',
         ];
     }
-
-
-
 }

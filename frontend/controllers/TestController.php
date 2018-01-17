@@ -9,54 +9,35 @@ use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 
-<<<<<<< HEAD
 //use  yii\web\Session;
 
 class TestController extends Controller
 {
 
     public $layout = '';
-   // public $defaultAction = 'admin';        //设置admin是默认的方法名
+
+    // public $defaultAction = 'admin';        //设置admin是默认的方法名
 
     public function actions()
     {
         //	echo rand();
     }
 
-    public function actionAdmin()
+    // 别名以 @ 开头 很多地方可以直接使用别名，而不用调用 Yii::getAlias() 转换成真实的路径或URL。
+    // common\config\bootstrap.php设置
+    public function actionAlias()
     {
-        	echo rand();
-    }
+        echo Yii::$app->basePath,'<br />';
+        echo \Yii::$app->request->BaseUrl,'+++<br />';
+        echo Yii::getAlias("@yii"),'<br />';
+        echo Yii::getAlias("@webroot"),'<br />';
+        echo Yii::getAlias("@app"),'<br />';
+        echo Yii::getAlias("@frontend"),'<br />';
+        echo Yii::getAlias("@backend"),'<br />';
+        echo Yii::getAlias("@common"),'<br />';
 
 
-    public function actionIndex()
-    {
-        echo __FUNCTION__, '<br />';
-        echo $this->id, '<br />';
-        echo $this->action->id, '<br />';
-        return $this->renderPartial('../index', ['name' => 'name', 'msg' => 'message']);
-
-    }
-
-    public function actionSelf()
-    {
-        echo __FUNCTION__, '<br />';
-
-    }
-
-    public function actionView()
-    {
-
-        return $this->renderPartial('../index', ['name' => 'name', 'msg' => 'message']);
-=======
-class TestController extends Controller
-{
-
-    public $layout = '';
-
-    public function actions()
-    {
-        //	echo rand();
+        return $this->renderPartial('//debug'); //使用双斜线“//”，程序就会从视图文件夹开始搜索
     }
 
     public function actionIndex()
@@ -64,7 +45,7 @@ class TestController extends Controller
         echo __FUNCTION__, '<br />';
         echo $this->id, '<br />';
         echo $this->action->id, '<br />';
-        return $this->renderPartial('../test', ['name' => 'name', 'msg' => 'message']);
+        return $this->renderPartial('//test', ['name' => 'name', 'msg' => 'message']);
 
     }
 
@@ -78,17 +59,20 @@ class TestController extends Controller
     {
 
         $msg = '<h1>aaaaa</h1>';
-
-        return $this->renderPartial('../test', ['name' => 'name', 'msg' => $msg]);
->>>>>>> 94f7f38f05e4e28a4898e022fb8ee4e4ffbceabe
-
+        return $this->renderPartial('//test', ['name' => 'name', 'msg' => $msg]);
     }
+
+    // 打印common/config和frontend/config中params.php和params-local.php的配置
+    public function actionConf()
+    {
+        printr(\Yii::$app->params);
+    }
+
 
     public function actionModel($id = 1)
     {
         $model = Blog::findOne($id);
         printr($model);
-<<<<<<< HEAD
 
     }
 
@@ -106,7 +90,6 @@ class TestController extends Controller
 
         echo $sess->get('name_string'), '<br />';
         printr($sess->get('name_array'));
-=======
 
     }
 
@@ -156,14 +139,13 @@ class TestController extends Controller
         ])->execute();
 
         printr($ret4);
->>>>>>> 94f7f38f05e4e28a4898e022fb8ee4e4ffbceabe
     }
 
 //      orm
     public function actionSql4()
     {
 
-        $condition = ["id"=>1];
+        $condition = ["id" => 1];
         $ret = Buser::find()->where($condition)->asArray()->one();   // 根据条件以数组形式返回一条数据；
         $ret2 = Buser::find()->where($condition)->asArray()->all();
 
@@ -172,12 +154,33 @@ class TestController extends Controller
 
         $ret = Buser::find()->one();    //此方法返回一条数据；   Buser::find()->all();    //此方法返回所有数据；
         $ret2 = Buser::find()->count();   // 此方法返回记录的数量；
-        $ret3 = Buser::findOne(10);
+        $ret3 = Buser::findOne(2);
 
         printr($ret);
         printr($ret2);
         printr($ret3);
+
+        return $this->renderPartial('//debug');
+
     }
+
+    public function actionFind()
+    {
+        $ret = Buser::find()->asArray()->one();          //   执行的是SELECT * FROM `buser`
+        $ret2 = Buser::findOne(2);                        // SELECT * FROM `buser` WHERE `id`=10
+
+        printr($ret);
+        printr($ret2);
+
+        return $this->renderPartial('//debug');        // 调用debug条，方便查看sql执行情况和session
+    }
+
+    // 显示debug条
+    public function actionBug()
+    {
+        return $this->renderPartial('//debug');
+    }
+
 
 }
 

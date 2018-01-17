@@ -89,14 +89,14 @@ class BlogController extends Controller
 
 //        echo $id,'<br />';
 
-        if(is_post()) {
-            printr(Yii::$app->request->post());     // 相当于$_POST
-            printr($model);
-            $model->load(Yii::$app->request->post());
-            printr($model);
-
-            die("ss");
-        }
+//        if(is_post()) {
+//            printr(Yii::$app->request->post());     // 相当于$_POST
+//            printr($model);
+//            $model->load(Yii::$app->request->post());
+//            printr($model);
+//
+//            die("ss");
+//        }
 
         if ( $model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
