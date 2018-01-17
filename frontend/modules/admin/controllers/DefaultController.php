@@ -5,6 +5,7 @@ namespace app\modules\admin\controllers;
 use yii\web\Controller;
 use app\modules\admin\models\Buser;
 
+//  访问模块admin的控制器 http://localhost:94/index.php/admin/default/find
 
 /**
  * Default controller for the `admin` module
@@ -20,7 +21,7 @@ class DefaultController extends Controller
         echo __FUNCTION__, '<br />';
         echo $this->id, '<br />';
         echo $this->action->id, '<br />';
-        return $this->renderPartial('../test');
+        return $this->renderPartial('//test');
     }
 
     public function actionSql4()

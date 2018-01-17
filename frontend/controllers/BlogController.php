@@ -1,6 +1,5 @@
 <?php
 
-//namespace app\controllers;
 namespace frontend\controllers;
 
 use Yii;
@@ -65,6 +64,7 @@ class BlogController extends Controller
      */
     public function actionCreate()
     {
+
         $model = new Blog();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

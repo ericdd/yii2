@@ -13,6 +13,7 @@ use yii\helpers\Html;
 <meta name="Description" content="" />
 <style type="text/css">
 *{list-style:none;font-size:14px;font-family:tahoma;}
+
 </style>
 </head>
 <body>
@@ -30,6 +31,8 @@ use yii\helpers\Html;
 
 <?php
 
+
+
 echo  $this->context->module->id,'<br />';     //视图在中获取模块名
 echo  $this->context->id,'<br />' ;        //控制器名
 echo  $this->context->action->id,'<br />' ;    // 方法名
@@ -46,6 +49,7 @@ echo $msg,'<br />';
 
 
 <script type="text/javascript">
+
 
 
 

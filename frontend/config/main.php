@@ -47,17 +47,15 @@ return [
                 '/blogs' => '/blog/index',
                 // '/blogs/<id:\d+>' => '/blog/view',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                //	"<controller:\w+>/<action:\w+>" => "<controller>/<action>",
             ],
         ],
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
+
+        'cache' => [
+            'class' => 'yii\caching\FileCache',     // 设置文件缓存
+//            'class' => 'yii\redis\Cache',           // 如果使用redis, cachePath要注释掉
+//            'cachePath' => '@runtime/cache2',       //缓存目录 frontend/runtime/cache2，可任意删除
+            'keyPrefix' => 'yi_',                // 唯一键前缀，生成一个yi目录
         ],
-        */
     ],
 
     'modules' => [
@@ -66,7 +64,7 @@ return [
             'class' => 'app\modules\admin\Module',
         ],
         'demo' => [
-            'defaultRoute' => 'default',
+//            'defaultRoute' => 'default',
             'class' => 'app\modules\demo\Module',
         ],
     ],

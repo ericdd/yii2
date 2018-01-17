@@ -7,6 +7,8 @@ use app\models\Buser;
 
 class PostsController extends \yii\web\Controller
 {
+
+//   访问二级目录下的控制器 http://localhost:94/index.php/api/posts/find
     public function actionIndex2()
     {
         return $this->render('//index');
