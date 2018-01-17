@@ -10,7 +10,7 @@ use app\modules\admin\models\Buser;
 /**
  * Default controller for the `admin` module
  */
-class DefaultController extends Controller
+class IndexController extends Controller
 {
     /**
      * Renders the index view for the module
@@ -22,6 +22,24 @@ class DefaultController extends Controller
         echo $this->id, '<br />';
         echo $this->action->id, '<br />';
         return $this->renderPartial('//test');
+    }
+
+    // 打印$this, 查看具体信息
+    public function actionThis()
+    {
+        echo $this->module->defaultRoute, '<br />';
+        echo $this->module->layout, '<br />';
+//        echo $this->module->requestedRoute, '<br />';        //当前浏览器的路由
+
+        printr($this);
+        die("");
+    }
+
+    //  将参数传递到layouts/main.php中
+    public function actionView1()
+    {
+        $msg = '<h1>将参数传递到layouts中</h1>';
+        return $this->render('../view', ['msg' => $msg]);
     }
 
     public function actionSql4()

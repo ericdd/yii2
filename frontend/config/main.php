@@ -8,6 +8,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+   // 'layout' => 'main',   //也可以在控制器中定义
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'defaultRoute' => 'site',          // 设置默认控制器
@@ -60,7 +61,8 @@ return [
 
     'modules' => [
         'admin' => [
-            'defaultRoute' => 'default',          // 设置module的默认控制器
+            'defaultRoute' => 'index',          // 设置module的默认控制器
+            'layout' => '../main2',          // 指定module admin的默认继承模版
             'class' => 'app\modules\admin\Module',
         ],
         'demo' => [

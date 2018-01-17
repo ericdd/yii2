@@ -16,7 +16,7 @@ class TestController extends Controller
 {
 
 //    public $layout = '';                  //  这里可以自动自定义的layout
-    // public $defaultAction = 'admin';        //设置admin是默认的方法名
+    // public $defaultAction = 'admin';        //设置admin是默认的方法
 
     // 访问http://localhost:94/index.php/test/captcha
     public function actions()
@@ -71,7 +71,6 @@ class TestController extends Controller
 
     public function actionView()
     {
-
         $msg = '<h1>aaaaa</h1>';
         return $this->renderPartial('//test', ['name' => 'name', 'msg' => $msg]);
     }
