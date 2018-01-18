@@ -3,15 +3,9 @@
 /yii_test
 /yii_test.bat
 
-runtime/
-debug/*.data
-
-*.log
-
-# phpstorm project files
+/vendor
 .idea
 
-# netbeans project files
 nbproject
 
 # zend studio for eclipse project files
@@ -19,38 +13,22 @@ nbproject
 .project
 .settings
 
-# windows thumbnail cache
-Thumbs.db
-
-# composer vendor dir
-/vendor
-
-# composer itself is not needed
 composer.phar
 
-# Mac DS_Store Files
-.DS_Store
-
-# phpunit itself is not needed
 phpunit.phar
-# local phpunit config
 /phpunit.xml
+
+runtime/
+debug/*.data
 
 # vagrant runtime
 /.vagrant
 
-# Word temporary
+*.log
 ~$*.doc*
-
-# Excel temporary
 ~$*.xls*
-
-# Excel Backup File
 *.xlk
-
-# PowerPoint temporary
 ~$*.ppt*
-
-# Visio autosave temporary files
 *.~vsd*
-
+.DS_Store
+Thumbs.db

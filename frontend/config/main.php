@@ -62,7 +62,7 @@ return [
     'modules' => [
         'admin' => [
             'defaultRoute' => 'index',          // 设置module的默认控制器
-            'layout' => '../main2',          // 指定module admin的默认继承模版
+            'layout' => '../main2',          // 指定module admin的layout模版
             'class' => 'app\modules\admin\Module',
         ],
         'demo' => [
