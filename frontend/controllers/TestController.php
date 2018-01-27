@@ -58,7 +58,6 @@ class TestController extends Controller
         echo $this->id, '<br />';
         echo $this->action->id, '<br />';
         return $this->renderPartial('//test', ['name' => 'name', 'msg' => 'message']);
-
     }
 
     // 调用common/helps目录下的公共方法

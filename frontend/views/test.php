@@ -8,7 +8,7 @@ use yii\helpers\Html;
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>test</title>
+<title>tvest</title>
 <meta name="Keywords" content="" />
 <meta name="Description" content="" />
 <style type="text/css">
@@ -19,13 +19,19 @@ use yii\helpers\Html;
 
 <pre>
 
-①　render显示view和layoutS
-②　renderPartial只显示view
+render显示view和layoutS
+renderPartial只显示view
 
 </pre>
 
 
 <hr />
+
+<h3>
+    <?php
+    echo __FILE__,'<br />';
+    ?>
+</h3>
 
 <?php
 
