@@ -238,7 +238,6 @@ class TestController extends Controller
         //  $cache->delete('z_name');
         // $cache->flush();    //删除全部缓存
 
-
     }
 
     // 要安装yii的redis扩展

@@ -25,6 +25,8 @@ return [
         'session' => [
             // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',
+//            'cookieParams' => ['httponly' => true, 'lifetime' => 3600],
+//            'timeout' => 10,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -59,12 +61,13 @@ return [
         ],
     ],
 
-    'modules' => [
+    'modules' => [                                // module可以单独设置自己的defaultRoute layout cache
         'admin' => [
-            'defaultRoute' => 'index',          // 设置module的默认控制器
-            'layout' => '../main2',          // 指定module admin的layout模版
+            'defaultRoute' => 'index',            // 设置module的默认控制器
+            'layout' => '../main2',                 // 指定module admin的layout模版
             'class' => 'app\modules\admin\Module',
         ],
+        
         'demo' => [
 //            'defaultRoute' => 'default',
             'class' => 'app\modules\demo\Module',
